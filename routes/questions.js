@@ -2,7 +2,8 @@ Qa.QuestionsRoute = Ember.Route.extend({
   model: function () {
     return this.store.find('question');
   },
-  deactivate: function () {
-    this.controller.set('notAskingQuestion', false);
+  setupController: function(controller, model) {
+    controller.set('questions', model);
+    controller.set('notAskingQuestion', true);
   }
 });

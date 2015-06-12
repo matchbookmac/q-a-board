@@ -1,7 +1,7 @@
 <h1 class="page-header text-center">
   <div class="row">
     <div class="col-md-4">
-      Q & A
+      {{#link-to 'questions'}}Q & A{{/link-to}}
     </div>
     {{#if notAskingQuestion}}
       <div class="col-md-4" {{action 'askQuestion'}}>
@@ -13,10 +13,10 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    {{#each question in model}}
+    {{#each question in this.questions itemController='question'}}
       <div class="question">
         <!-- {{#link-to 'question' id}}{{name}} asks: {{question}}{{/link-to}} -->
-        {{question.ame}} asks: {{question.question}}
+        {{question.name}} asks: {{question.question}}
       </div>
     {{/each}}
   </div>
