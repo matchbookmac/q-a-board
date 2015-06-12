@@ -1,5 +1,29 @@
-<h1 class="page-header text-center">QA</h1>
+<h1 class="page-header text-center">
+  <div class="row">
+    <div class="col-md-4">
+      Q & A
+    </div>
+    {{#if notAskingQuestion}}
+      <div class="col-md-4" {{action 'askQuestion'}}>
+        {{#link-to 'ask-question' class="btn btn-primary" role="button"}}Ask a Question{{/link-to}}
+      </div>
+    {{/if}}
+  </div>
+</h1>
 
-{{#each question in model}}
-  {{#link-to 'question' id}}{{name}} asks: {{question}}{{/link-to}}
-{{/each}}
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    {{#each question in model}}
+      <div class="question">
+        <!-- {{#link-to 'question' id}}{{name}} asks: {{question}}{{/link-to}} -->
+        {{question.ame}} asks: {{question.question}}
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    {{outlet 'ask-question'}}
+  </div>
+</div>

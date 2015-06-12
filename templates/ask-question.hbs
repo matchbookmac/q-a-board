@@ -1,0 +1,15 @@
+<form>
+  <div class="form-group">
+    <label for="name">Your Name:</label>
+    {{input value=name id="name" type="text" class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="question">Your Question:</label>
+    {{input value=question id="question" type="text" class="form-control" placeholder="Brief question"}}
+  </div>
+  <div class="form-group">
+    <label for="description">Description of Your Question:</label>
+    {{textarea value=description id="description" type="text" rows="5" class="form-control"}}
+  </div>
+  <button type="button" class="btn btn-success" {{action 'askQuestion'}}>Ask Question</button>
+</form>
