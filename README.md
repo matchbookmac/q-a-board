@@ -22,7 +22,7 @@ Ian MacDonald
 
 ### Setup
 
-This app was written in `JavaScript`, `HTML`, and `JQuery`.
+This app was written in `Ember`, `JavaScript`, and `HTML`.
 
 Clone this repo with
 ```console
