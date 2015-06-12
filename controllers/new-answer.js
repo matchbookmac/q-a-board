@@ -1,22 +1,24 @@
-Qa.NewAnswerController = Ember.ObjectController.extend({
+Qa.NewAnswerController = Ember.Controller.extend({
   needs: ['question'],
-  newAnswer: null,
+  // newAnswer: null,
   actions: {
     reply: function () {
       var that     = this;
       var questionController = this.controllerFor('question');
       var question = questionController.get('model');
       var answer   = this.store.createRecord('answer', {
-        name:        this.get('this.newAnswer.name'),
-        answer:      this.get('this.newAnswer.answer')
+        name:        this.get('answerName'),
+        answer:      this.get('answer')
       });
 
-      this.get('newAnswer').destroyRecord();
+      // this.get('newAnswer').destroyRecord();
 
       answer.save().then( function (answer, question) {
         question.get('answers').pushObject(answer);
         questionController.set("notReplying", true);
-        lot.save();
+        question.save();
+        that.set('name', '');
+        that.set('newAnswer', '');
         that.transitionToRoute('questions');
       });
 

@@ -1,10 +1,7 @@
 Qa.QuestionController = Ember.ObjectController.extend({
-  init: function () {
-    console.log('hi');
-  },
   needs: ['questions', 'question'],
   itemController: 'answer',
-  newAnswer: null,
+  // newAnswer: null,
   notReplying: true,
   clicked: false,
   actions: {
@@ -19,25 +16,25 @@ Qa.QuestionController = Ember.ObjectController.extend({
     answer: function () {
       this.notReplying ? this.set('notReplying', false) : this.set('notReplying', true);
     },
-    reply: function () {
-      var that     = this;
-      var question = this.get('model');
-      var answer   = this.store.createRecord('answer', {
-        name:        this.get('this.newAnswer.name'),
-        answer:      this.get('this.newAnswer.answer')
-      });
-
-      this.get('newAnswer').destroyRecord();
-
-      answer.save().then( function (answer) {
-        question.get('answers').then(function (answers) {
-          answers.pushObject(answer);
-        });
-        that.set("notReplying", true);
-        question.save();
-        that.transitionToRoute('questions');
-      });
-    }
+    // reply: function () {
+    //   var that     = this;
+    //   var question = this.get('model');
+    //   var answer   = this.store.createRecord('answer', {
+    //     name:        this.get('answerName'),
+    //     answer:      this.get('answer')
+    //   });
+    //
+    //   // this.get('newAnswer').destroyRecord();
+    //
+    //   answer.save().then( function (answer) {
+    //     question.get('answers').pushObject(answer);
+    //     that.set("notReplying", true);
+    //     question.save();
+    //     that.set('name', '');
+    //     that.set('newAnswer', '');
+    //     that.transitionToRoute('questions');
+    //   });
+    // }
   }
 });
 

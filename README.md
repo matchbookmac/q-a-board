@@ -1,4 +1,4 @@
-## APP NAME
+## Q & A
 
 <a href="APP LINK IF APPLICABLE" target="#"><APP LINK NAME></a>
 
@@ -10,9 +10,11 @@ GNU General Public License, version 3 (see below). Copyright (c) 2015 Ian C. Mac
 
 ### Description
 
-**APP NAME**
+**Q & A**
 
-<DESCRIPTION>
+This App is only partially complete. I was unable to successfully add answers to questions. I was stuck on being able to identify the model of the question controller while inside the newAnswer controller. As a result, I could not push the new answer object into the question's answer array.
+
+Consequently, I was also unable to fulfill the other requirements of being able to edit answers and questions.
 
 ### Author(s)
 
@@ -24,12 +26,12 @@ This app was written in `JavaScript`, `HTML`, and `JQuery`.
 
 Clone this repo with
 ```console
-> git clone https://github.com/matchbookmac/<REPO NAME>.git
+> git clone https://github.com/matchbookmac/q-a-board.git
 ```
 
 Start App:
 
-Navigate to your favorite browser, enter the file > open dialog, open the `*.html*` file in the root directory of the project folder.
+Start a local server in the root directory of the project, navigate to the relevant port in your favorite browser.
 
 
 ### License ###
@@ -37,7 +39,7 @@ Copyright  (C)  2015  Ian C. MacDonald
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or    
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,

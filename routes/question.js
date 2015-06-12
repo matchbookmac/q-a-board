@@ -1,11 +1,11 @@
 Qa.QuestionRoute = Ember.Route.extend({
-  model: function (params) {
-    return this.store.find('question', params.question_id);
-  },
+  // model: function (params) {
+  //   return this.store.find('question', params.question_id);
+  // },
   setupController: function(controller, model) {
-    controller.set('answers', model);
-    var newAnswer = this.store.createRecord('answer');
-    controller.set('newAnswer', newAnswer);
+    // controller.set('answers', model);
+    // var newAnswer = this.store.createRecord('answer');
+    // controller.set('newAnswer', newAnswer);
     controller.set('notReplying', true);
   },
   showReplyButton: function () {
