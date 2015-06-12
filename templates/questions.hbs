@@ -1,0 +1,5 @@
+<h1 class="page-header text-center">QA</h1>
+
+{{#each question in model}}
+  {{#link-to 'question' id}}{{name}} asks: {{question}}{{/link-to}}
+{{/each}}

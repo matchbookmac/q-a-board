@@ -1,3 +1,3 @@
 Qa.Router.map(function () {
-  this.resource('test', {path: '/'})
+  this.resource('questions', {path: '/'})
 });
