@@ -14,9 +14,11 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     {{#each question in this.questions itemController='question'}}
-      <div class="question">
-        <!-- {{#link-to 'question' id}}{{name}} asks: {{question}}{{/link-to}} -->
-        {{question.name}} asks: {{question.question}}
+      <div class="question" {{action 'questionClicked'}}>
+        <p class="lead">{{question.name}} asks: {{question.question}}</p>
+        {{#if question.clicked}}
+          <p>{{question.description}}</p>
+        {{/if}}
       </div>
     {{/each}}
   </div>

@@ -1,6 +1,18 @@
-#jqtest {
-  background-color: black;
-  color: white;
+.question {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgba( 255, 237, 229, 0.8 );
+}
+
+.lead {
+  margin-bottom: 0px;
+}
+
+.question:hover {
+  background-color: rgba( 191, 172, 172, 0.8 );
+  cursor: pointer;
 }
 
 .vertical-center {

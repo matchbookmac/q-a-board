@@ -16,7 +16,3 @@ Qa.AskQuestionController = Ember.Controller.extend({
     }
   }
 });
-// t4vlb
-//
-// {"question":{"records":{"8pjjb":{"id":"8pjjb","answers":[]},"7pp7m":{"id":"7pp7m","answers":[]},"5nmti":{"id":"5nmti","answers":[]},"5nr37":{"id":"5nr37","answers":[]},"869i9":{"id":"869i9","answers":[]}}}}
-// {"question":{"records":{"8pjjb":{"id":"8pjjb","answers":[]},"7pp7m":{"id":"7pp7m","answers":[]},"5nmti":{"id":"5nmti","answers":[]},"5nr37":{"id":"5nr37","answers":[]},"869i9":{"id":"869i9","answers":[]},"t4vlb":{"id":"t4vlb","answers":[]}}}}
