@@ -26,6 +26,7 @@
         <div class="no-hover">
           {{#if question.clicked}}
             <div>
+              <p>{{question.description}}</p>
               {{outlet 'question-details'}}
             </div>
 
@@ -38,7 +39,7 @@
                 {{outlet 'new-answer'}}
               </div>
             {{/if}}
-            
+
           {{/if}}
         </div>
 
