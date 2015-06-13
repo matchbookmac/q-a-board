@@ -7,7 +7,8 @@ Qa.NewAnswerRoute = Ember.Route.extend({
   },
   setupController: function(controller, model) {
     controller.set('model', model);
-    // controller.controllerFor('question').set('model')
+    var newAnswer = this.store.createRecord('answer');
+    controller.set('newAnswer', newAnswer);
   },
   showReplyButton: function () {
     this.controllerFor('question').set('notReplying', true);
