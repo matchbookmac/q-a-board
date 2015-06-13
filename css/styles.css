@@ -2,17 +2,27 @@
   border: 1px solid black;
   border-radius: 5px;
   margin-bottom: 10px;
-  padding: 10px 10px 0px 10px;
-  background-color: rgba( 255, 237, 229, 0.8 );
+  padding: 10px 10px 10px 10px;
+  background-color: rgba( 255, 237, 229, 1 );
 }
 
 .lead {
   margin-bottom: 10px;
 }
 
+.no-hover {
+  margin: -10px;
+  padding: 10px;
+}
+
 .question:hover {
   background-color: rgba( 191, 172, 172, 0.8 );
   cursor: pointer;
+}
+
+div.no-hover:hover {
+  background-color: rgba( 255, 237, 229, 1 );
+  border-radius: 0px 0px 5px 5px;
 }
 
 .vertical-center {
@@ -22,3 +32,9 @@
   display: flex;
   align-items: center;
 }
+
+
+/*div:hover {background: salmon}
+div p:hover {background: white}
+div p {padding-bottom: 26px}
+div button {position: absolute; bottom: 0}*/

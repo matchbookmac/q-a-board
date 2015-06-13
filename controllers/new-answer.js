@@ -4,18 +4,19 @@ Qa.NewAnswerController = Ember.Controller.extend({
   actions: {
     reply: function () {
       var that     = this;
-      var questionController = this.controllerFor('question');
-      var question = questionController.get('model');
+      var question = this.get('model');
+      var answers  = question.get('answers');
       var answer   = this.store.createRecord('answer', {
         name:        this.get('answerName'),
-        answer:      this.get('answer')
+        answer:      this.get('answer'),
+        question:    question
       });
 
       // this.get('newAnswer').destroyRecord();
 
-      answer.save().then( function (answer, question) {
+      answer.save().then( function (answer) {
         question.get('answers').pushObject(answer);
-        questionController.set("notReplying", true);
+//         questionController.set("notReplying", true);
         question.save();
         that.set('name', '');
         that.set('newAnswer', '');
@@ -33,6 +34,3 @@ Qa.NewAnswerController = Ember.Controller.extend({
     }
   }
 });
-
-
-// {"question":{"records":{"nfth1":{"id":"nfth1","name":"Ian","question":"What is the meaning of life?","description":"Please","answers":[]},"l6opr":{"id":"l6opr","name":"Bob","question":"Way to Go!","description":"Yeah!","answers":[]},"b1j4a":{"id":"b1j4a","name":"Phill","question":"Cool","description":"Very Cool","answers":[]}}},"answer":{"records":{"ig0cj":{"id":"ig0cj","name":"Ian","question":null}}}}

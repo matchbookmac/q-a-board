@@ -16,24 +16,30 @@
     {{#each question in this.questions itemController='question'}}
 
       <div class="question">
-        <div {{action 'questionClicked'}}>
-          {{#link-to 'question-details' question.id}}
-            <p class="lead"><strong>{{question.name}}</strong> asks: {{question.question}}</p>
-          {{/link-to}}
-        </div>
 
-        {{#if question.clicked}}
-          {{outlet 'question-details'}}
-
-          {{#if question.notReplying}}
-            <div {{action 'answer'}}>
-              <p>{{#link-to 'new-answer' question.id class="btn btn-primary" role="button"}}Reply{{/link-to}}</p>
+            <div {{action 'questionClicked'}}>
+              {{#link-to 'question-details' question.id}}
+                <p class="lead"><strong>{{question.name}}</strong> asks: {{question.question}}</p>
+              {{/link-to}}
             </div>
-          {{else}}
-            {{outlet 'new-answer'}}
+
+        <div class="no-hover">
+          {{#if question.clicked}}
+            <div>
+              {{outlet 'question-details'}}
+            </div>
+            {{#if question.notReplying}}
+              <div {{action 'answer'}}>
+                {{#link-to 'new-answer' question.id class="btn btn-primary" role="button"}}Reply{{/link-to}}
+              </div>
+            {{else}}
+              <div>
+                {{outlet 'new-answer'}}
+              </div>
+            {{/if}}
           {{/if}}
-          
-        {{/if}}
+        </div>
+        
       </div>
 
     {{/each}}

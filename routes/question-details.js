@@ -9,6 +9,7 @@ Qa.QuestionDetailsRoute = Ember.Route.extend({
     // controller.set('answers', model);
     // var newAnswer = this.store.createRecord('answer');
     // controller.set('newAnswer', newAnswer);
+    controller.set('model', model);
     // controller.set('parent', this.controller);
     // controller.set('parentController', controller.get('parent'));
     // this.controllerFor('new-answer').set('parentController', controller);

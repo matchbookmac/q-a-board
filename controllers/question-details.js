@@ -1,5 +1,5 @@
 Qa.QuestionDetailsController = Ember.ObjectController.extend({
-  // needs: ['questions', 'question', 'new-answer'],
+  needs: ['question'],
   // itemController: 'answer',
   parent: null
 });
