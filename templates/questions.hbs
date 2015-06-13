@@ -17,12 +17,13 @@
 
       <div class="question">
         <div {{action 'questionClicked'}}>
-          <p class="lead"><strong>{{question.name}}</strong> asks: {{question.question}}</p>
+          {{#link-to 'question-details' question.id}}
+            <p class="lead"><strong>{{question.name}}</strong> asks: {{question.question}}</p>
+          {{/link-to}}
         </div>
 
         {{#if question.clicked}}
-          <p>{{question.description}}</p>
-
+          {{outlet 'question-details'}}
 
           {{#if question.notReplying}}
             <div {{action 'answer'}}>
@@ -31,14 +32,7 @@
           {{else}}
             {{outlet 'new-answer'}}
           {{/if}}
-
-          {{#each answer in question.answers}}
-            <div class="answer">
-              {{answer.name}} says: {{answer.answer}}
-            </div>
-          {{/each}}
-
-
+          
         {{/if}}
       </div>
 

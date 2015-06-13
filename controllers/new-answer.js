@@ -1,5 +1,5 @@
 Qa.NewAnswerController = Ember.Controller.extend({
-  needs: ['question'],
+  needs: ['question', 'questions'],
   // newAnswer: null,
   actions: {
     reply: function () {

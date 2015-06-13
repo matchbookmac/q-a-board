@@ -1,0 +1,9 @@
+<p>{{this.description}}</p>
+
+
+
+{{#each answer in this.answers}}
+  <div class="answer">
+    {{answer.name}} says: {{answer.answer}}
+  </div>
+{{/each}}
