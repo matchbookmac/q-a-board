@@ -1,9 +1,9 @@
 Qa.AskQuestionController = Ember.Controller.extend({
-  needs: ['questions'],
+  needs: ['questions', 'question', 'question-details', 'new-answer'],
   newQuestion: null,
   actions: {
     askQuestion: function () {
-      var thing    = this;
+      var that    = this;
       var question = this.store.createRecord('question', {
         name:        this.get('this.newQuestion.name'),
         description: this.get('this.newQuestion.description'),
@@ -11,7 +11,11 @@ Qa.AskQuestionController = Ember.Controller.extend({
       });
       this.get('newQuestion').destroyRecord();
       question.save().then( function (question) {
-        thing.transitionToRoute('questions');
+        var questionController = that.controllerFor('question')
+        questionController.set('model', question);
+        that.controllerFor('question-details').set('parentController', questionController);
+//         that.controllerFor('new-answer').set('parentController', questionController);
+        that.transitionToRoute('questions');
       });
     }
   }

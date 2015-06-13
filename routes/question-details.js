@@ -10,15 +10,16 @@ Qa.QuestionDetailsRoute = Ember.Route.extend({
     // var newAnswer = this.store.createRecord('answer');
     // controller.set('newAnswer', newAnswer);
     controller.set('model', model);
+
     // controller.set('parent', this.controller);
     // controller.set('parentController', controller.get('parent'));
     // this.controllerFor('new-answer').set('parentController', controller);
     // this.controllerFor('question-details').set('parent', controller);
     // controller.set('notReplying', true);
   },
-  // showReplyButton: function () {
-  //   this.controllerFor('question').set('notReplying', true);
-  // }.on('deactivate')
+  showReplyButton: function () {
+    this.controllerFor('question').set('notReplying', true);
+  }.on('activate')
 });
 
 

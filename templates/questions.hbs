@@ -28,6 +28,7 @@
             <div>
               {{outlet 'question-details'}}
             </div>
+
             {{#if question.notReplying}}
               <div {{action 'answer'}}>
                 {{#link-to 'new-answer' question.id class="btn btn-primary" role="button"}}Reply{{/link-to}}
@@ -37,9 +38,10 @@
                 {{outlet 'new-answer'}}
               </div>
             {{/if}}
+            
           {{/if}}
         </div>
-        
+
       </div>
 
     {{/each}}

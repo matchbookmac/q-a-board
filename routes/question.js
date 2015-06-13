@@ -16,9 +16,9 @@ Qa.QuestionRoute = Ember.Route.extend({
   //   this.controllerFor('new-answer').set('parentController', controller);
   //   controller.set('notReplying', true);
   },
-  setParentTrail: function () {
-    controller.set('parent', this.controller);
-  }.on('activate'),
+  // setParentTrail: function () {
+  //   controller.set('parent', this.controller);
+  // }.on('activate'),
   showReplyButton: function () {
     this.controllerFor('question').set('notReplying', true);
   }.on('deactivate')

@@ -5,7 +5,7 @@ Qa.NewAnswerController = Ember.Controller.extend({
     reply: function () {
       var that     = this;
       var question = this.get('model');
-      var answers  = question.get('answers');
+//       var answers  = question.get('answers');
       var answer   = this.store.createRecord('answer', {
         name:        this.get('answerName'),
         answer:      this.get('answer'),
@@ -20,7 +20,8 @@ Qa.NewAnswerController = Ember.Controller.extend({
         question.save();
         that.set('name', '');
         that.set('newAnswer', '');
-        that.transitionToRoute('questions');
+        that.get('parentController').set('notReplying', true);
+        that.transitionToRoute('question-details', question.get('id'));
       });
 
       //

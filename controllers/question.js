@@ -12,6 +12,9 @@ Qa.QuestionController = Ember.ObjectController.extend({
         this.set('notReplying', true);
       } else {
         this.set('clicked', true);
+        var newAnswerController = this.controllerFor('new-answer');
+        newAnswerController.set('parentController', this);
+//         that.controllerFor('question-details').set('parentController', questionController);
       }
     },
     answer: function () {
