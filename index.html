@@ -14,8 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <!-- Libs for Ember -->
-    <script src="http://builds.emberjs.com/release/ember.js"></script>
-    <script src="http://builds.emberjs.com/release/ember-template-compiler.js"></script>
+    <script src="http://builds.emberjs.com/tags/v1.12.1/ember.debug.js"></script>
+    <script src="http://builds.emberjs.com/tags/v1.12.1/ember-template-compiler.js"></script>
     <script src="http://builds.emberjs.com/tags/v1.0.0-beta.16/ember-data.js"></script>
     <script src="libs/localstorage_adapter.js"></script>
     <script src="libs/ember-handlebars-loader-0.0.2.js"></script>
@@ -33,6 +33,7 @@
     <script src="routes/questions.js"></script>
     <script src="routes/question.js"></script>
     <script src="routes/question-details.js"></script>
+    <script src="routes/edit-question.js"></script>
     <script src="routes/ask-question.js"></script>
     <script src="routes/answers.js"></script>
     <script src="routes/new-answer.js"></script>
@@ -41,13 +42,14 @@
     <script src="controllers/questions.js"></script>
     <script src="controllers/question.js"></script>
     <script src="controllers/question-details.js"></script>
+    <script src="controllers/edit-question.js"></script>
     <script src="controllers/ask-question.js"></script>
     <script src="controllers/answers.js"></script>
     <script src="controllers/new-answer.js"></script>
 
     <script type="text/javascript">
       EmberHandlebarsLoader.loadTemplates([
-        'application', 'questions', 'question-details', 'ask-question', 'new-answer'
+        'application', 'questions', 'question-details', 'ask-question', 'edit-question', 'new-answer'
       ]);
     </script>
   </head>

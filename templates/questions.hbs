@@ -1,7 +1,7 @@
-<h1 class="page-header text-center">
+<div class="page-header text-center">
   <div class="row">
     <div class="col-md-4">
-      {{#link-to 'questions'}}Q & A{{/link-to}}
+      {{#link-to 'questions' tagName="h1"}}Q & A{{/link-to}}
     </div>
     {{#if notAskingQuestion}}
       <div class="col-md-4" {{action 'askQuestion'}}>
@@ -9,7 +9,7 @@
       </div>
     {{/if}}
   </div>
-</h1>
+</div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -17,14 +17,17 @@
 
       <div class="question">
 
-            <div {{action 'questionClicked'}}>
-              {{#link-to 'question-details' question.id}}
-                <p class="lead"><strong>{{question.name}}</strong> asks: {{question.question}}</p>
+            <span {{action 'questionClicked'}}>
+              {{#link-to 'question-details' question.id tagName="p" class="lead"}}
+                <strong>{{question.name}}</strong> asks: {{question.question}}
               {{/link-to}}
-            </div>
+            </span>
 
         <div class="no-hover">
           {{#if question.clicked}}
+            {{#link-to 'edit-question' question.id class="btn btn-primary"}}
+              Edit Question
+            {{/link-to}}
             <div>
               <p>{{question.description}}</p>
               {{outlet 'question-details'}}
