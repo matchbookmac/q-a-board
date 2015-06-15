@@ -12,44 +12,23 @@
 </div>
 
 <div class="row">
+    <div class="col-md-4">
     {{#each question in this.questions itemController='question'}}
 
-      <div class="question col-md-6 col-md-offset-3">
-            <span {{action 'questionClicked'}}>
-              {{#link-to 'question-details' question.id tagName="span" class="lead"}}
-                <strong>{{question.name}}</strong> asks: {{question.question}}
-              {{/link-to}}
-            </span>
-
-
-          {{#if question.clicked}}
-            <span class="pull-right">
-              {{#link-to 'edit-question' question.id class="btn btn-primary"}}
-                Edit
-              {{/link-to}}
-            </span>
-            <div class="col-md-10">
-              <p>{{question.description}}</p>
-              {{outlet 'question-details'}}
-            </div>
-
-              {{#if question.notReplying}}
-                <div {{action 'answer'}} class="col-md-2">
-                  {{#link-to 'new-answer' question.id class="btn btn-primary" role="button"}}Reply{{/link-to}}
-                </div>
-              {{else}}
-            <div>
-                <span>
-                  {{outlet 'new-answer'}}
-                </span>
-            </div>
-              {{/if}}
-
-          {{/if}}
-
-      </div>
-
+        <div class="question" {{action 'questionClicked'}}>
+          {{#link-to 'question-details' question.id tagName="span" class="lead"}}
+            <strong>{{question.name}}</strong> asks: {{question.question}}
+          {{/link-to}}
+        </div>
     {{/each}}
+    </div>
+
+    {{#if questionClicked}}
+      <div class="col-md-8">
+        {{outlet 'question-details'}}
+      </div>
+    {{/if}}
+
 </div>
 
 <div class="row">

@@ -4,14 +4,15 @@ Qa.QuestionController = Ember.ObjectController.extend({
   parent: null,
   // newAnswer: null,
   notReplying: true,
-  clicked: false,
+  // clicked: false,
   actions: {
     questionClicked: function () {
+      var parentController = this.get('controllers.questions');
       if (this.clicked) {
-        this.set('clicked', false);
+        parentController.set('questionClicked', false);
         this.set('notReplying', true);
       } else {
-        this.set('clicked', true);
+        parentController.set('questionClicked', true);
         var newAnswerController = this.controllerFor('new-answer');
         newAnswerController.set('parentController', this);
 //         that.controllerFor('question-details').set('parentController', questionController);

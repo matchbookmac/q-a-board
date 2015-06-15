@@ -1,4 +1,22 @@
-
+<span class="pull-right">
+  {{#link-to 'edit-question' question.id class="btn btn-primary"}}
+    Edit
+  {{/link-to}}
+</span>
+<div class="col-md-10">
+  <p>{{question.description}}</p>
+  {{#if question.notReplying}}
+    <div {{action 'answer'}} class="col-md-2">
+      {{#link-to 'new-answer' question.id class="btn btn-primary" role="button"}}Reply{{/link-to}}
+    </div>
+  {{else}}
+  <div>
+    <span>
+      {{outlet 'new-answer'}}
+    </span>
+  </div>
+  {{/if}}
+</div>
 
 <hr>
 
